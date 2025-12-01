@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Exam Score Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1 class="app-title">Student Exam Score Predictor</h1>
+      <p class="subtitle">Fill the fields and click <strong>Predict Score</strong></p>
+    </header>
+
+    <main class="main-container">
+      <form id="predict-form" action="http://127.0.0.1:5000/predict" method="POST" class="form-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="col col-left">
+          <div class="input-card" id="card-age">
+            <label for="age">Age</label>
+            <div class="input-row">
+              <input id="age" name="age" type="number" min="10" max="100" required />
+              <span class="unit">years</span>
+            </div>
+            <small class="hint">Valid: 10–100</small>
+          </div>
+
+          <div class="input-card" id="card-study">
+            <label for="study_hours_per_day">Study Hours</label>
+            <div class="input-row">
+              <input id="study_hours_per_day" name="study_hours_per_day" type="number" step="0.1" min="0" max="24" required />
+              <span class="unit">hrs/day</span>
+            </div>
+            <small class="hint">Typical: 0–12</small>
+          </div>
+
+          <div class="input-card" id="card-parttime">
+            <label for="part_time_job">Part-time Job</label>
+            <div class="input-row">
+              <select id="part_time_job" name="part_time_job">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+
+          <div class="input-card" id="card-sleep">
+            <label for="sleep_hours">Sleep Duration</label>
+            <div class="input-row">
+              <input id="sleep_hours" name="sleep_hours" type="number" step="0.1" min="0" max="24" required />
+              <span class="unit">hrs/day</span>
+            </div>
+            <small class="hint">Recommended: 6–9</small>
+          </div>
+
+          <div class="input-card" id="card-parent">
+            <label for="parental_education_level">Parental Education</label>
+            <div class="input-row">
+              <select id="parental_education_level" name="parental_education_level">
+                <option>None</option>
+                <option>High School</option>
+                <option>Bachelor</option>
+                <option>Master</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col col-right">
+          <div class="input-card" id="card-gender">
+            <label for="gender">Gender</label>
+            <div class="input-row">
+              <select id="gender" name="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+
+          <div class="input-card" id="card-social">
+            <label for="social_media_hours">Social Media Usage</label>
+            <div class="input-row">
+              <input id="social_media_hours" name="social_media_hours" type="number" step="0.1" min="0" max="24" required />
+              <span class="unit">hrs/day</span>
+            </div>
+            <small class="hint">Try to keep moderate</small>
+          </div>
+
+          <div class="input-card" id="card-attendance">
+            <label for="attendance_percentage">Attendance</label>
+            <div class="input-row">
+              <input id="attendance_percentage" name="attendance_percentage" type="number" min="0" max="100" step="0.1" required />
+              <span class="unit">%</span>
+            </div>
+            <small class="hint">Valid: 0–100%</small>
+          </div>
+
+          <div class="input-card" id="card-diet">
+            <label for="diet_quality">Diet Quality</label>
+            <div class="input-row">
+              <select id="diet_quality" name="diet_quality">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+                <option>Excellent</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+
+          <div class="input-card" id="card-exercise">
+            <label for="exercise_frequency">Exercise Frequency</label>
+            <div class="input-row">
+              <input id="exercise_frequency" name="exercise_frequency" type="number" min="0" max="7" />
+              <span class="unit">days/week</span>
+            </div>
+            <small class="hint">0–7</small>
+          </div>
+
+          <div class="input-card" id="card-internet">
+            <label for="internet_Resource_accessibility">Internet Access</label>
+            <div class="input-row">
+              <select id="internet_Resource_accessibility" name="internet_Resource_accessibility">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+
+          <div class="input-card" id="card-extra">
+            <label for="extracurricular_participation">Extracurricular Participation</label>
+            <div class="input-row">
+              <select id="extracurricular_participation" name="extracurricular_participation">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+              <span class="unit">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- submit full-width -->
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">Predict Score</button>
+        </div>
+
+      </form>
+    </main>
+
+    <footer class="footer">
+      <small>Classic minimal theme • Soft blue-gray palette</small>
+    </footer>
+  </div>
+</body>
+</html>

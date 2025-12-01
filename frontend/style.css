@@ -1,0 +1,158 @@
+/* Theme colors */
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --panel-gray: #eef1f4;   /* left/right column background */
+  --accent: #5b6b92;       /* pleasant blue-gray accent */
+  --accent-2: #42506f;
+  --muted: #6b7280;
+  --input-bg: #f7f9fb;
+  --border: #d6dae0;
+}
+
+/* Page */
+body{
+  margin:0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #1f2430;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  max-width:1100px;
+  margin:28px auto;
+  padding:18px;
+}
+
+/* Header */
+.header{
+  margin-bottom:14px;
+  text-align:center;
+}
+.app-title{
+  margin:0;
+  font-size:26px;
+  color:var(--accent-2);
+}
+.subtitle{
+  margin:6px 0 0 0;
+  color:var(--muted);
+}
+
+/* Main grid layout */
+.main-container{
+  display:block;
+  margin-top:18px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+/* Left & right columns with subtle gray background */
+.col{
+  padding:18px;
+  border-radius:12px;
+  background: var(--panel-gray);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* input-card (each input has its own wrapper) */
+.input-card{
+  background: var(--card);
+  border-radius:10px;
+  padding:12px;
+  margin-bottom:12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(26,36,60,0.03);
+}
+
+/* Label */
+.input-card label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:var(--accent-2);
+  margin-bottom:8px;
+}
+
+/* input-row wraps input and unit */
+.input-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Input and select styling (consistent blue-gray) */
+input[type="number"], select{
+  flex:1;
+  padding:10px 12px;
+  font-size:14px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background: var(--input-bg);
+  color: #16202b;
+  outline:none;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+/* Hover / focus */
+input[type="number"]:focus, select:focus{
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(73,96,150,0.12);
+  background: #ffffff;
+}
+
+/* Unit text (right side) */
+.unit{
+  min-width:70px;
+  text-align:right;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* small hint text */
+.hint{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* Submit row spans two columns */
+.submit-row{
+  grid-column: 1 / -1;
+  display:flex;
+  justify-content:center;
+  margin-top:8px;
+}
+
+/* Submit button */
+.btn-submit{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border: none;
+  padding:12px 22px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow: 0 8px 22px rgba(73,96,150,0.12);
+  transition: transform .08s ease, box-shadow .12s ease;
+}
+.btn-submit:hover{ transform: translateY(-2px); box-shadow: 0 12px 30px rgba(73,96,150,0.16); }
+.btn-submit:active{ transform: translateY(0); }
+
+/* Footer */
+.footer{ text-align:center; margin-top:16px; color:var(--muted); font-size:12px; }
+
+/* Responsive: stack columns on small screens */
+@media (max-width:900px){
+  .form-grid{ grid-template-columns: 1fr; }
+  .submit-row{ padding: 0 12px; }
+  .col{ padding:14px; }
+}
