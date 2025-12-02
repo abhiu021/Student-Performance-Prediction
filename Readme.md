@@ -106,7 +106,9 @@ student-performance-app/
 git clone https://github.com/your-username/student-performance-app.git
 
 git clone https://github.com/your-username/student-performance-app.git
+
 python -m venv venv
+
 venv\Scripts\activate
 
 
