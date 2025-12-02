@@ -84,16 +84,25 @@ Hence, it was selected as the final model for deployment.
 
 student-performance-app/
 │
+
 ├── backend/
+
 │ ├── app.py
+
 │ ├── requirements.txt
+
 │
 ├── frontend/
+
 │ ├── index.html
+
 │ └── style.css
+
 │
 ├── models/
+
 │ └── lasso_pipeline.joblib
+
 │
 └── README.md
 
